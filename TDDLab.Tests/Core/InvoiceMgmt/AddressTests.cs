@@ -15,7 +15,7 @@ namespace TDDLab.Tests.Core.InvoiceMgmt
         public AddressTests() => _subject = new Address(AddressLine, City, State, Zip);
 
         [Fact]
-        public void Should_ReturnImmutableValue_When_UsingAddressLineGetter()
+        public void Should_ReturnImmutableValue_When_AddressLineGetter()
         {
             var addressLine = _subject.AddressLine1;
 
@@ -23,7 +23,7 @@ namespace TDDLab.Tests.Core.InvoiceMgmt
         }
 
         [Fact]
-        public void Should_ReturnImmutableValue_When_UsingCityGetter()
+        public void Should_ReturnImmutableValue_When_CityGetter()
         {
             var city = _subject.City;
 
@@ -31,7 +31,7 @@ namespace TDDLab.Tests.Core.InvoiceMgmt
         }
 
         [Fact]
-        public void Should_ReturnImmutableValue_When_UsingStateGetter()
+        public void Should_ReturnImmutableValue_When_StateGetter()
         {
             var state = _subject.State;
 
@@ -39,7 +39,7 @@ namespace TDDLab.Tests.Core.InvoiceMgmt
         }
 
         [Fact]
-        public void Should_ReturnImmutableValue_When_UsingZipGetter()
+        public void Should_ReturnImmutableValue_When_ZipGetter()
         {
             var zip = _subject.Zip;
 
@@ -47,7 +47,7 @@ namespace TDDLab.Tests.Core.InvoiceMgmt
         }
 
         [Fact]
-        public void Should_ReturnProperBusinessObject_When_CallingValidationRuleAddressLine1Getter()
+        public void Should_ReturnProperBusinessObject_When_ValidationRuleAddressLine1Getter()
         {
             var subject = Address.ValidationRules.AddressLine1;
 
@@ -57,7 +57,7 @@ namespace TDDLab.Tests.Core.InvoiceMgmt
         }
 
         [Fact]
-        public void Should_ReturnProperBusinessObject_When_CallingValidationRuleCityGetter()
+        public void Should_ReturnProperBusinessObject_When_ValidationRuleCityGetter()
         {
             var subject = Address.ValidationRules.City;
 
@@ -67,7 +67,7 @@ namespace TDDLab.Tests.Core.InvoiceMgmt
         }
 
         [Fact]
-        public void Should_ReturnProperBusinessObject_When_CallingValidationRuleStateGetter()
+        public void Should_ReturnProperBusinessObject_When_ValidationRuleStateGetter()
         {
             var subject = Address.ValidationRules.State;
 
@@ -77,7 +77,7 @@ namespace TDDLab.Tests.Core.InvoiceMgmt
         }
 
         [Fact]
-        public void Should_ReturnProperBusinessObject_When_CallingValidationRuleZipGetter()
+        public void Should_ReturnProperBusinessObject_When_ValidationRuleZipGetter()
         {
             var subject = Address.ValidationRules.Zip;
 
