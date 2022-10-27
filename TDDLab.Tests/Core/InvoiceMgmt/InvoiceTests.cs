@@ -1,4 +1,5 @@
-﻿using Moq;
+﻿using BasicUtils;
+using Moq;
 using TDDLab.Core.InvoiceMgmt;
 
 namespace TDDLab.Tests.Core.InvoiceMgmt
@@ -22,6 +23,7 @@ namespace TDDLab.Tests.Core.InvoiceMgmt
         {
             var subject = Invoice.ValidationRules.InvoiceNumber;
             
+            Assert.IsType<BusinessRule<Invoice>>(subject);
             Assert.Equal("get_InvoiceNumber", subject.Name);
             Assert.Equal("Invoice number should be specified", subject.Description);
         }
@@ -31,9 +33,9 @@ namespace TDDLab.Tests.Core.InvoiceMgmt
         {
             var subject = Invoice.ValidationRules.BillingAddress;
             
+            Assert.IsType<BusinessRule<Invoice>>(subject);
             Assert.Equal("get_BillingAddress", subject.Name);
             Assert.Equal("Billing address should be valid", subject.Description);
-            Assert.Equal(6, subject.);
         }
 
         [Fact]
@@ -41,6 +43,7 @@ namespace TDDLab.Tests.Core.InvoiceMgmt
         {
             var subject = Invoice.ValidationRules.Recipient;
             
+            Assert.IsType<BusinessRule<Invoice>>(subject);
             Assert.Equal("get_Recipient", subject.Name);
             Assert.Equal("Recipient should be valid", subject.Description);
         }
@@ -50,6 +53,7 @@ namespace TDDLab.Tests.Core.InvoiceMgmt
         {
             var subject = Invoice.ValidationRules.Discount;
             
+            Assert.IsType<BusinessRule<Invoice>>(subject);
             Assert.Equal("get_Discount", subject.Name);
             Assert.Equal("Discount should be valid", subject.Description);
         }
@@ -59,6 +63,7 @@ namespace TDDLab.Tests.Core.InvoiceMgmt
         {
             var subject = Invoice.ValidationRules.Lines;
             
+            Assert.IsType<BusinessRule<Invoice>>(subject);
             Assert.Equal("get_Lines", subject.Name);
             Assert.Equal("Invoice lines should all be valid", subject.Description);
         }
