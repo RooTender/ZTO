@@ -1,11 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.32630.194
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32929.385
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BasicUtils", "BasicUtils\BasicUtils.csproj", "{C75F0DBF-C7B2-427B-B075-B6EBA6EDEB55}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BasicUtils", "BasicUtils\BasicUtils.csproj", "{C75F0DBF-C7B2-427B-B075-B6EBA6EDEB55}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TDDLab.Core", "TDDLab.Core\TDDLab.Core.csproj", "{0C0EE877-9D2F-46DC-9300-EB8093D32131}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TDDLab.Core", "TDDLab.Core\TDDLab.Core.csproj", "{0C0EE877-9D2F-46DC-9300-EB8093D32131}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TDDLab.Tests", "TDDLab.Tests\TDDLab.Tests.csproj", "{10FEA7C4-49BA-4F51-9D43-CBDD22EC5A58}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{0C0EE877-9D2F-46DC-9300-EB8093D32131}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0C0EE877-9D2F-46DC-9300-EB8093D32131}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0C0EE877-9D2F-46DC-9300-EB8093D32131}.Release|Any CPU.Build.0 = Release|Any CPU
+		{10FEA7C4-49BA-4F51-9D43-CBDD22EC5A58}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{10FEA7C4-49BA-4F51-9D43-CBDD22EC5A58}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{10FEA7C4-49BA-4F51-9D43-CBDD22EC5A58}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{10FEA7C4-49BA-4F51-9D43-CBDD22EC5A58}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
