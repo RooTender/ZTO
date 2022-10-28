@@ -1,12 +1,10 @@
 ﻿using BasicUtils;
-using Moq;
 using TDDLab.Core.InvoiceMgmt;
 
 namespace TDDLab.Tests.Core.InvoiceMgmt
 {
     public class InvoiceLineTests
     {
-
         private class MoneyStub : Money
         {
             public MoneyStub() : base(100, "stub")
