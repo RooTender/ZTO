@@ -1,4 +1,5 @@
 using BasicUtils;
+using System.Net;
 using TDDLab.Core.InvoiceMgmt;
 
 namespace TDDLab.Tests.Core.InvoiceMgmt
@@ -84,6 +85,92 @@ namespace TDDLab.Tests.Core.InvoiceMgmt
             Assert.IsType<BusinessRule<Address>>(subject);
             Assert.Equal("get_Zip", subject.Name);
             Assert.Equal("Zip code should be specified", subject.Description);
+        }
+
+        [Fact]
+        public void Should_ValidateWithValidData_When_Validate()
+        {
+            var result = _subject.Validate();
+
+            Assert.Empty(result);
+        }
+
+        [Fact]
+        public void Should_ReturnBrokenRule_When_CityIsNull_When_Validate()
+        {
+            var subject = new Address(AddressLine, null, State, Zip);
+
+            var result = subject.Validate();
+
+            Assert.Single(result);
+            Assert.Collection<IRule>(result, 
+                item => Assert.Equal(Address.ValidationRules.City, item)
+            );
+        }
+
+        [Fact]
+        public void Should_ReturnBrokenRule_When_CityIsEmpty_When_Validate()
+        {
+            var subject = new Address(AddressLine, string.Empty, State, Zip);
+
+            var result = subject.Validate();
+
+            Assert.Single(result);
+            Assert.Collection<IRule>(result, 
+                item => Assert.Equal(Address.ValidationRules.City, item)
+            );
+        }
+
+        [Fact]
+        public void Should_ReturnBrokenRule_When_StateIsNull_When_Validate()
+        {
+            var subject = new Address(AddressLine, City, null, Zip);
+
+            var result = subject.Validate();
+
+            Assert.Single(result);
+            Assert.Collection<IRule>(result, 
+                item => Assert.Equal(Address.ValidationRules.State, item)
+            );
+        }
+
+        [Fact]
+        public void Should_ReturnBrokenRule_When_StateIsEmpty_When_Validate()
+        {
+            var subject = new Address(AddressLine, City, string.Empty, Zip);
+
+            var result = subject.Validate();
+
+            Assert.Single(result);
+            Assert.Collection<IRule>(result, 
+                item => Assert.Equal(Address.ValidationRules.State, item)
+            );
+        }
+
+        [Fact]
+        public void Should_ReturnBrokenRule_When_ZipCodeIsNull_When_Validate()
+        {
+            var subject = new Address(AddressLine, City, State, null);
+
+            var result = subject.Validate();
+
+            Assert.Single(result);
+            Assert.Collection<IRule>(result, 
+                item => Assert.Equal(Address.ValidationRules.Zip, item)
+            );
+        }
+
+        [Fact]
+        public void Should_ReturnBrokenRule_When_ZipCodeIsEmpty_When_Validate()
+        {
+            var subject = new Address(AddressLine, City, State, string.Empty);
+
+            var result = subject.Validate();
+
+            Assert.Single(result);
+            Assert.Collection<IRule>(result, 
+                item => Assert.Equal(Address.ValidationRules.Zip, item)
+            );
         }
     }
 }
